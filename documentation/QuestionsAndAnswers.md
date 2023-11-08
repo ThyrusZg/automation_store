@@ -1,6 +1,7 @@
 # The Challenge
 
 ## 1. Access https://automationteststore.com/
+- Click on the link above
 ## 2. Create a Test Coverage Plan:
 - a. Analyze the website and document 3 major user scenarios.
 - b. Based on these scenarios, create a test coverage plan 
