@@ -33,4 +33,4 @@ def test_invalid_login(page: Page) -> None:
 
     login_header_error = page.locator("class.alert alert-error alert-danger")
 
-    expect(login_header_error)
+    expect(login_header_error).to_be_visible()

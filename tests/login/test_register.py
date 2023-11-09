@@ -46,7 +46,7 @@ def test_check_that_registration_mandatory_fields_must_be_imputed(page: Page) ->
 
     end_registration_header = page.locator("class.alert alert-error alert-danger")
 
-    expect(end_registration_header)
+    expect(end_registration_header).to_be_visible()
 
 
 def test_check_that_registration_privacy_policy_must_be_accepted(page: Page) -> None:
@@ -74,4 +74,4 @@ def test_check_that_registration_privacy_policy_must_be_accepted(page: Page) -> 
 
     end_registration_header = page.locator("class.alert alert-error alert-danger")
 
-    expect(end_registration_header)
+    expect(end_registration_header).to_be_visible()
