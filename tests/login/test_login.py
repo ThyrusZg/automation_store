@@ -1,36 +1,21 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import expect
+
+from automation_store.src.pages.LoginPage import LoginPage
 
 
-def test_navigate_to_login_page(page: Page) -> None:
-    page.goto("https://automationteststore.com/")
-    page.get_by_role("link", name="Login or register").click()
+def test_valid_login(login_page_generator):
+    login_page = LoginPage(login_page_generator)
+    credentials = {"username": "test_automation_user", "password": "1234"}
+    login_page.do_login(credentials)
+    account_header = login_page.page.locator("span.maintext")
 
-    login_header = page.locator("span.maintext")
-
-    expect(login_header).to_have_text("Account Login")
-
-
-def test_login_with_valid_user(page: Page) -> None:
-    page.goto("https://automationteststore.com/index.php?rt=account/login")
-    page.locator("#loginFrm_loginname").click()
-    page.locator("#loginFrm_loginname").fill("test_automation_user")
-    page.locator("#loginFrm_password").click()
-    page.locator("#loginFrm_password").fill("1234")
-    page.get_by_role("button", name=" Login").click()
-
-    login_header = page.locator("span.maintext")
-
-    expect(login_header).to_have_text("My Account")
+    expect(account_header).to_be_visible()
+    expect(account_header).to_have_text("My Account")
 
 
-def test_invalid_login(page: Page) -> None:
-    page.goto("https://automationteststore.com/index.php?rt=account/login")
-    page.locator("#loginFrm_loginname").click()
-    page.locator("#loginFrm_loginname").fill("tester")
-    page.locator("#loginFrm_password").click()
-    page.locator("#loginFrm_password").fill("1234")
-    page.get_by_role("button", name=" Login").click()
+def test_invalid_login(login_page_generator):
+    login_page = LoginPage(login_page_generator)
+    credentials = {"username": "none", "password": "none"}
+    login_page.do_login(credentials)
 
-    login_header_error = page.locator("class.alert alert-error alert-danger")
-
-    expect(login_header_error).to_be_visible()
+    expect(login_page.error_message).to_be_visible()

@@ -1,77 +1,35 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import expect
+
+from automation_store.src.pages.RegistrationPage import RegistrationPage
 
 
-def test_check_that_register_button_is_working(page: Page) -> None:
-    page.goto("https://automationteststore.com/index.php?rt=account/login")
-    page.get_by_role("button", name=" Continue").click()
+def test_check_that_user_is_successfully_registered(registration_page_generator) -> None:
+    register_page = RegistrationPage(registration_page_generator)
+    credentials = {"first_name": "test", "last_name": "test", "email": "tes1212t@mail.com", "full_address": "ilica",
+                   "city": "zagreb", "region": "3513", "zip_code": "12345", "login_name": "new_tester_123",
+                   "password": "abcd1234"}
+    register_page.do_register_user(credentials)
 
-    register_header = page.locator("span.maintext")
+    account_header = register_page.page.locator("span.maintext")
 
-    expect(register_header).to_have_text("Create Account")
-
-
-def test_check_that_user_is_successfully_registered(page: Page) -> None:
-    page.goto("https://automationteststore.com/index.php?rt=account/create")
-    page.locator("#AccountFrm_firstname").click()
-    page.locator("#AccountFrm_firstname").fill("Tester")
-    page.locator("#AccountFrm_lastname").click()
-    page.locator("#AccountFrm_lastname").fill("Tester")
-    page.locator("#AccountFrm_email").click()
-    page.locator("#AccountFrm_email").fill("test@mail.hr")
-    page.locator("#AccountFrm_address_1").click()
-    page.locator("#AccountFrm_address_1").fill("test address 123")
-    page.locator("#AccountFrm_city").click()
-    page.locator("#AccountFrm_city").fill("test")
-    page.locator("#AccountFrm_zone_id").select_option("3513")
-    page.locator("#AccountFrm_postcode").click()
-    page.locator("#AccountFrm_postcode").fill("123456")
-    page.locator("#AccountFrm_loginname").click()
-    page.locator("#AccountFrm_loginname").fill("testertester12")
-    page.locator("#AccountFrm_password").click()
-    page.locator("#AccountFrm_password").fill("12345")
-    page.locator("#AccountFrm_confirm").click()
-    page.locator("#AccountFrm_confirm").fill("12345")
-    page.get_by_label("I have read and agree to the Privacy Policy").check()
-    page.get_by_role("button", name=" Continue").click()
-
-    end_registration_header = page.locator("span.maintext")
-
-    expect(end_registration_header).to_have_text("Your Account Has Been Created!")
+    expect(account_header).to_be_visible()
+    expect(account_header).to_have_text("Your Account Has Been Created!")
 
 
-def test_check_that_registration_mandatory_fields_must_be_imputed(page: Page) -> None:
-    page.goto("https://automationteststore.com/index.php?rt=account/create")
-    page.get_by_label("I have read and agree to the Privacy Policy").check()
-    page.get_by_role("button", name=" Continue").click()
+def test_check_that_registration_mandatory_fields_must_be_imputed(registration_page_generator) -> None:
+    register_page = RegistrationPage(registration_page_generator)
+    register_page.accept_policy_checkbox_check()
+    register_page.click_registration_button()
 
-    end_registration_header = page.locator("class.alert alert-error alert-danger")
-
-    expect(end_registration_header).to_be_visible()
+    expect(register_page.error_message).to_be_visible()
 
 
-def test_check_that_registration_privacy_policy_must_be_accepted(page: Page) -> None:
-    page.goto("https://automationteststore.com/index.php?rt=account/create")
-    page.get_by_role("button", name=" Continue").click()
-    page.locator("#AccountFrm_firstname").click()
-    page.locator("#AccountFrm_firstname").fill("Tester")
-    page.locator("#AccountFrm_lastname").click()
-    page.locator("#AccountFrm_lastname").fill("Tester")
-    page.locator("#AccountFrm_email").click()
-    page.locator("#AccountFrm_email").fill("test@mail.hr")
-    page.locator("#AccountFrm_address_1").click()
-    page.locator("#AccountFrm_address_1").fill("test address 123")
-    page.locator("#AccountFrm_city").click()
-    page.locator("#AccountFrm_city").fill("test")
-    page.locator("#AccountFrm_zone_id").select_option("3513")
-    page.locator("#AccountFrm_postcode").click()
-    page.locator("#AccountFrm_postcode").fill("123456")
-    page.locator("#AccountFrm_loginname").click()
-    page.locator("#AccountFrm_loginname").fill("testertester12")
-    page.locator("#AccountFrm_password").click()
-    page.locator("#AccountFrm_password").fill("12345")
-    page.locator("#AccountFrm_confirm").click()
-    page.locator("#AccountFrm_confirm").fill("12345")
+def test_check_that_registration_privacy_policy_must_be_accepted(registration_page_generator) -> None:
+    register_page = RegistrationPage(registration_page_generator)
+    register_page.enter_first_name("test")
+    register_page.enter_last_name("test")
+    register_page.enter_email("test@mailer.hr")
+    register_page.enter_zip_code("10000")
+    register_page.click_registration_button()
 
-    end_registration_header = page.locator("class.alert alert-error alert-danger")
-
-    expect(end_registration_header).to_be_visible()
+    expect(register_page.error_message).to_be_visible()

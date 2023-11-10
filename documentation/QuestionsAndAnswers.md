@@ -7,7 +7,7 @@
 - b. Based on these scenarios, create a test coverage plan 
 detailing how you’d approach testing each scenario.
 
-## Answer:
+### Answer:
 ### a. Analyze the website and document 3 major user scenarios.
 ### 1. Create account and login 
 This scenario is designed to check basic account creation and usability of newly created account
@@ -78,7 +78,7 @@ can be added to the cart
 - There are more tests that can usually be executed, but this site does not support such features
 (translations, localizations)
 
-## 3. Automation Testing:
+# 3. Automation Testing:
 ### a. Propose an automation testing framework for the website.
 - My proposal for automation testing framework is pytest with playwright plugin/library.
 - Playwright is user-friendly, easy to learn, and it is well documented. Same goes for pytest.
@@ -91,7 +91,7 @@ I will prepare all test cases to work with POM, if not I will only demonstrate t
 - How to start test cases is in RunTests.md
 - Also check InstallRequirements.md
 
-## 4. Manual Testing:
+# 4. Manual Testing:
 ### a. Highlight 3 areas/features of the website that you believe should primarily be tested manually. 
 ### b. Justify your choices.
 ### 1. User Interface (UI)
@@ -127,7 +127,7 @@ humans would
 - By manually testing whole process,flow of the web page from searching product, adding it to cart and payment process,
 tester can provide valuable feedback to designers and developers how it can be easier to perform some steps.
 
-## 5. API Testing:
+# 5. API Testing:
 ### a. Assume the website has endpoints for product listings, user registration, and order placements.
 
 - /
