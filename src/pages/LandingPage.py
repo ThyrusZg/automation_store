@@ -78,5 +78,11 @@ class LandingPage:
         self._search_input_field.fill(product_name)
         self._search_button.click()
 
+    def click_on_search_button(self):
+        self._search_button.click()
+
     def add_to_chart_in_detailed_view(self):
         self._add_to_cart_specific_product.click()
+
+    def check_cart_name(self, product):
+        self.page.get_by_role("link", name=product)

@@ -19,6 +19,10 @@ class TestData:
         return "test"
 
     @staticmethod
+    def link_text():
+        return "link"
+
+    @staticmethod
     def span_maintext():
         return "span.maintext"
 
@@ -43,6 +47,16 @@ class TestData:
         return "Create Account"
 
     @staticmethod
+    def search_text():
+        return "Search"
+
+    @staticmethod
+    def shopping_cart():
+        return "Shopping Cart"
+    """
+    PRODUCTS
+    """
+    @staticmethod
     def waterproof_protective_undereye_concealer():
         return "Waterproof Protective Undereye Concealer"
 
@@ -50,3 +64,38 @@ class TestData:
     def total_moisture_facial_cream():
         return "Total Moisture Facial Cream"
 
+    @staticmethod
+    def jersey_cotton_striped_polo_shirt():
+        return "Jersey Cotton Striped Polo Shirt"
+
+    @staticmethod
+    def polo_text():
+        return "polo"
+
+    @staticmethod
+    def cream_precieuse_nut():
+        return "Creme Precieuse Nuit 50ml"
+
+    @staticmethod
+    def gucci_guilty():
+        return "Gucci Guilty"
+
+    @staticmethod
+    def shower_text():
+        return "shower"
+
+    @staticmethod
+    def men_plus_care_shower_tool():
+        return "Men+Care Active Clean Shower Tool"
+
+    @staticmethod
+    def eau_text():
+        return "eau"
+
+    @staticmethod
+    def eau_parfumee_au_the_vert_shampoo():
+        return "Eau Parfumee au The Vert Shampoo"
+
+    @staticmethod
+    def allegiant_by_veronica_roth():
+        return "Allegiant by Veronica Roth"
