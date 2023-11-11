@@ -3,7 +3,7 @@ from automation_store.tests.test_data.test_data import TestData
 from automation_store.src.pages.LandingPage import LandingPage
 
 
-def xtest_navigate_to_login_page(landing_page_generator) -> None:
+def test_navigate_to_login_page(landing_page_generator) -> None:
     landing_page = LandingPage(landing_page_generator)
     landing_page.click_login_button()
 
@@ -13,7 +13,7 @@ def xtest_navigate_to_login_page(landing_page_generator) -> None:
     expect(login_heading).to_have_text(TestData.account_login_text())
 
 
-def xtest_check_that_register_button_is_working(landing_page_generator) -> None:
+def test_check_that_register_button_is_working(landing_page_generator) -> None:
     landing_page = LandingPage(landing_page_generator)
     landing_page.click_login_button()
     landing_page.click_register_button()
@@ -126,3 +126,27 @@ def test_add_product_to_cart_from_default_category_search(landing_page_generator
     expect(chart_name).to_have_text(TestData.shopping_cart())
     expect(product_name).to_be_visible()
     expect(product_name).to_have_text(TestData.total_moisture_facial_cream())
+
+
+def test_add_product_to_cart_from_makeup_category(landing_page_generator) -> None:
+    landing_page = LandingPage(landing_page_generator)
+    landing_page.do_search_in_makeup_category(TestData.waterproof_protective_undereye_concealer())
+    landing_page.add_to_chart_in_detailed_view()
+
+    chart_name = landing_page.page.locator(TestData.span_maintext())
+    product_name = landing_page.page.get_by_role(TestData.link_text(), name=TestData.waterproof_protective_undereye_concealer())
+
+    expect(chart_name).to_be_visible()
+    expect(chart_name).to_have_text(TestData.shopping_cart())
+    expect(product_name).to_be_visible()
+    expect(product_name).to_have_text(TestData.waterproof_protective_undereye_concealer())
+
+
+def test_add_product_to_cart_out_stock(landing_page_generator) -> None:
+    landing_page = LandingPage(landing_page_generator)
+    landing_page.do_search_in_apparel_and_accessories_category(TestData.polo_text())
+
+    out_of_stock_product = landing_page.page.locator(TestData.span_nostock())
+
+    expect(out_of_stock_product).to_be_visible()
+    expect(out_of_stock_product).to_have_text(TestData.out_of_stock_text())

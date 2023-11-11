@@ -10,8 +10,8 @@ class TestData:
 
     @staticmethod
     def valid_register_data():
-        return {"first_name": "test", "last_name": "test", "email": "tes1212t@mail.com", "full_address": "ilica",
-                "city": "zagreb", "region": "3513", "zip_code": "12345", "login_name": "new_tester_123",
+        return {"first_name": "test", "last_name": "test", "email": "tes12121212t@mail.com", "full_address": "ilica",
+                "city": "zagreb", "region": "3513", "zip_code": "12345", "login_name": "new_1tester_12345",
                 "password": "abcd1234"}
 
     @staticmethod
@@ -29,6 +29,10 @@ class TestData:
     @staticmethod
     def span_bgnone():
         return "span.bgnone"
+
+    @staticmethod
+    def span_nostock():
+        return "span.nostock"
 
     @staticmethod
     def account_created_text():
@@ -53,6 +57,15 @@ class TestData:
     @staticmethod
     def shopping_cart():
         return "Shopping Cart"
+
+    @staticmethod
+    def out_of_stock_text():
+        return "Out of Stock"
+
+    @staticmethod
+    def checkout_confirmation_text():
+        return "Checkout Confirmation"
+
     """
     PRODUCTS
     """
@@ -99,3 +112,7 @@ class TestData:
     @staticmethod
     def allegiant_by_veronica_roth():
         return "Allegiant by Veronica Roth"
+
+    @staticmethod
+    def skinsheen_bronzer_stick():
+        return "Skinsheen Bronzer Stick"
