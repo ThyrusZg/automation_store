@@ -15,12 +15,36 @@ class TestData:
                 "password": "abcd1234"}
 
     @staticmethod
+    def valid_username():
+        return "test_automation_user"
+
+    @staticmethod
+    def invalid_username():
+        return "no"
+
+    @staticmethod
+    def valid_password():
+        return "1234"
+
+    @staticmethod
+    def invalid_password():
+        return "no"
+
+    @staticmethod
+    def home_page():
+        return "https://automationteststore.com/"
+
+    @staticmethod
     def string_test():
         return "test"
 
     @staticmethod
     def link_text():
         return "link"
+
+    @staticmethod
+    def contentpanel_text():
+        return '//*[@id="maincontainer"]/div/div/div/div'
 
     @staticmethod
     def span_maintext():
@@ -66,6 +90,33 @@ class TestData:
     def checkout_confirmation_text():
         return "Checkout Confirmation"
 
+    @staticmethod
+    def delivery_information_text():
+        return "Delivery Information"
+
+    @staticmethod
+    def shipping_address_text():
+        return "Shipping Address"
+
+    @staticmethod
+    def payment_information_text():
+        return "Payment Information"
+
+    @staticmethod
+    def payment_address_text():
+        return "Payment Address"
+
+    @staticmethod
+    def processed_order_text():
+        return "Your Order Has Been Processed!"
+
+    @staticmethod
+    def invoice_order_text():
+        return "Order Details"
+
+    @staticmethod
+    def your_shopping_cart_is_empty_text():
+        return "Your shopping cart is empty!"
     """
     PRODUCTS
     """
