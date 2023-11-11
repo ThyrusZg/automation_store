@@ -2,5 +2,4 @@ pytest
 pytest-playwright
 playwright
 pytest-html
-logging
-sys
+logger
