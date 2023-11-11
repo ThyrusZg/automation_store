@@ -88,8 +88,14 @@ can be added to the cart
 - Automation test cases are located in automation_store/tests.
 In Pages there is example of POM (Page object model) where each class represents one page. If there will be time
 I will prepare all test cases to work with POM, if not I will only demonstrate that test case is executing.
+- Tests are located in /tests folder(package)
+- Tests are divided into following categories:
+  - login and registration tests (located in /tests/login)
+  - searching for specific product tests, adding to chart in various categories tests (located in /tests/landing_page)
+  - checkout tests, invoice test, remove item test (located in /tests/checkout/)
 - How to start test cases is in RunTests.md
 - Also check InstallRequirements.md
+- This automation was time limited, and it is missing some elements and some test cases were left out
 
 # 4. Manual Testing:
 ### a. Highlight 3 areas/features of the website that you believe should primarily be tested manually. 
