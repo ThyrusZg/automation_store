@@ -5,3 +5,4 @@
 - If you want to see execution ''pytest --headed --slowmo 500''' (slowmo will slow down execution, so it can be noticed)
 - Note* : In order to execute tests with pytest it is common practise that all test start with "test_"
 - pytest is configured to adapt pytest-html, and it will generate report after each test run in /reports/ folder
+- tests can be run in paralel by installing pytest-xdist (pip install pytest-xdist) and when running tests, add -n <number_of_workers> (example: pytest -n 10)
