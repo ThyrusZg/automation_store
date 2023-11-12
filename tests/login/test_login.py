@@ -5,6 +5,11 @@ from automation_store.src.logger.logger_setup import logger
 
 
 def test_valid_login(login_page_generator):
+    """
+    Purpose of this test is to check that user can log in successfully with valid credentials
+    :param login_page_generator: conftest generated login page
+    :return: None
+    """
     logger.info("*** STARTING TEST VALID LOGIN TEST ***")
     login_page = LoginPage(login_page_generator)
     credentials = TestData.valid_login_data()
@@ -19,6 +24,11 @@ def test_valid_login(login_page_generator):
 
 
 def test_invalid_login_both_credentials(login_page_generator):
+    """
+    Purpose of this test is to check that both invalid credentials will deny log in
+    :param login_page_generator: conftest generated login page
+    :return: None
+    """
     logger.info("*** STARTING TEST INVALID LOGIN WITH BOTH INVALID CREDENTIALS ***")
     login_page = LoginPage(login_page_generator)
     credentials = TestData.invalid_login_data()
@@ -30,6 +40,11 @@ def test_invalid_login_both_credentials(login_page_generator):
 
 
 def test_empty_data_login_attempt(login_page_generator):
+    """
+    Purpose of this test is to check that no data in input fields will deny log in
+    :param login_page_generator: conftest generated login page
+    :return: None
+    """
     logger.info("*** STARTING TEST EMPTY DATA LOGIN ATTEMPT ***")
     login_page = LoginPage(login_page_generator)
     logger.info("Clicking the button with no data inputted")
@@ -40,6 +55,11 @@ def test_empty_data_login_attempt(login_page_generator):
 
 
 def test_empty_username_login_attempt(login_page_generator):
+    """
+    Purpose of this test is to check that missing username will deny login
+    :param login_page_generator: conftest generated login page
+    :return: None
+    """
     logger.info("*** STARTING TEST EMPTY USERNAME LOGIN ATTEMPT ***")
     login_page = LoginPage(login_page_generator)
 
@@ -52,6 +72,11 @@ def test_empty_username_login_attempt(login_page_generator):
 
 
 def test_empty_password_login_attempt(login_page_generator):
+    """
+    Purpose of this test is to check that missing password will deny login
+    :param login_page_generator: conftest generated login page
+    :return: None
+    """
     logger.info("*** STARTING TEST EMPTY PASSWORD LOGIN ATTEMPT ***")
     login_page = LoginPage(login_page_generator)
 
@@ -64,6 +89,11 @@ def test_empty_password_login_attempt(login_page_generator):
 
 
 def test_invalid_username_login_attempt(login_page_generator):
+    """
+    Purpose of this test is to check that invalid username will deny login
+    :param login_page_generator: conftest generated login page
+    :return: None
+    """
     logger.info("*** STARTING TEST INVALID USERNAME LOGIN ATTEMPT ***")
     login_page = LoginPage(login_page_generator)
 
@@ -77,6 +107,11 @@ def test_invalid_username_login_attempt(login_page_generator):
 
 
 def test_invalid_password_login_attempt(login_page_generator):
+    """
+    Purpose of this test is to check that invalid password will deny login
+    :param login_page_generator: conftest generated login page
+    :return: None
+    """
     logger.info("*** STARTING TEST INVALID PASSWORD LOGIN ATTEMPT ***")
     login_page = LoginPage(login_page_generator)
 

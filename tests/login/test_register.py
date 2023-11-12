@@ -5,6 +5,11 @@ from automation_store.src.logger.logger_setup import logger
 
 
 def test_check_that_user_is_successfully_registered(registration_page_generator) -> None:
+    """
+    Purpose of this test is to check that user can be successfully registered
+    :param registration_page_generator: conftest generated registration page
+    :return: None
+    """
     logger.info("*** STARTING TEST VALID REGISTRATION TEST ***")
     register_page = RegistrationPage(registration_page_generator)
     credentials = TestData.valid_register_data()
@@ -20,6 +25,11 @@ def test_check_that_user_is_successfully_registered(registration_page_generator)
 
 
 def test_check_that_registration_mandatory_fields_must_be_imputed(registration_page_generator) -> None:
+    """
+        Purpose of this test is to check that all mandatory fields must be input in order to register new user
+        :param registration_page_generator: conftest generated registration page
+        :return: None
+        """
     logger.info("*** STARTING TEST MISSING MANDATORY FIELDS ***")
     register_page = RegistrationPage(registration_page_generator)
 
@@ -32,6 +42,11 @@ def test_check_that_registration_mandatory_fields_must_be_imputed(registration_p
 
 
 def test_check_that_registration_privacy_policy_must_be_accepted(registration_page_generator) -> None:
+    """
+        Purpose of this test is to check that privacy policy must be accepted in order to register.
+        :param registration_page_generator: conftest generated registration page
+        :return: None
+        """
     logger.info("*** STARTING TEST POLICY NOT ACCEPTED ***")
     register_page = RegistrationPage(registration_page_generator)
     data = TestData.string_test()

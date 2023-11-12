@@ -5,6 +5,11 @@ from automation_store.src.logger.logger_setup import logger
 
 
 def test_check_that_checkout_page_is_visible(checkout_page_generator) -> None:
+    """
+    Purpose of this test is to check that checkout page is visible
+    :param checkout_page_generator: conftest generated checkout page with logged-in user and item added to cart
+    :return:
+    """
     logger.info("*** STARTING TEST CHECK THAT CHECKOUT PAGE IS VISIBLE ***")
     checkout_page = CheckoutPage(checkout_page_generator)
 
@@ -16,6 +21,11 @@ def test_check_that_checkout_page_is_visible(checkout_page_generator) -> None:
 
 
 def test_enter_edit_shipping(checkout_page_generator) -> None:
+    """
+    Purpose of this test is to check that edit shipping button will open shipping panel
+    :param checkout_page_generator: conftest generated checkout page with logged-in user and item added to cart
+    :return:
+    """
     logger.info("*** STARTING TEST CHECK THAT EDIT SHIPPING BUTTON IS WORKING ***")
     checkout_page = CheckoutPage(checkout_page_generator)
     logger.info("Clicking on edit shipping button")
@@ -29,6 +39,12 @@ def test_enter_edit_shipping(checkout_page_generator) -> None:
 
 
 def test_enter_change_shipping_address(checkout_page_generator) -> None:
+    """
+    Purpose of this test is to check that shipping address edit panel can be accessed by pressing on
+    edit shipping button -> shipping address button
+    :param checkout_page_generator: conftest generated checkout page with logged-in user and item added to cart
+    :return:
+    """
     logger.info("*** STARTING TEST CHECK THAT SHIPPING DATA EDIT PANEL IS OPENING ***")
     checkout_page = CheckoutPage(checkout_page_generator)
     logger.info("Click on edit shipping button")
@@ -44,6 +60,11 @@ def test_enter_change_shipping_address(checkout_page_generator) -> None:
 
 
 def test_enter_edit_payment(checkout_page_generator) -> None:
+    """
+    Purpose of this test is to check that payment panel can be accessed by pressing on edit payment button
+    :param checkout_page_generator: conftest generated checkout page with logged-in user and item added to cart
+    :return:
+    """
     logger.info("*** STARTING TEST CHECK THAT EDIT PAYMENT BUTTON IS WORKING ***")
     checkout_page = CheckoutPage(checkout_page_generator)
     logger.info("Click on edit payment button")
@@ -57,6 +78,11 @@ def test_enter_edit_payment(checkout_page_generator) -> None:
 
 
 def test_enter_edit_coupon(checkout_page_generator) -> None:
+    """
+    Purpose of this test is to check that coupon panel can be accessed by pressing on edit coupon button
+    :param checkout_page_generator: conftest generated checkout page with logged-in user and item added to cart
+    :return:
+    """
     logger.info("*** STARTING TEST CHECK THAT EDIT COUPON BUTTON IS WORKING ***")
     checkout_page = CheckoutPage(checkout_page_generator)
     logger.info("Click on edit coupon button")
@@ -70,6 +96,12 @@ def test_enter_edit_coupon(checkout_page_generator) -> None:
 
 
 def test_enter_change_coupon(checkout_page_generator) -> None:
+    """
+    Purpose of this test is to check that payment address editor can be accessed by pressing on
+    edit coupon button -> payment address button
+    :param checkout_page_generator: conftest generated checkout page with logged-in user and item added to cart
+    :return:
+    """
     logger.info("*** STARTING TEST CHECK THAT PAYMENT DATA EDIT PANEL IS OPENING ***")
     checkout_page = CheckoutPage(checkout_page_generator)
     logger.info("Click on edit coupon button")
@@ -85,6 +117,11 @@ def test_enter_change_coupon(checkout_page_generator) -> None:
 
 
 def test_enter_edit_cart(checkout_page_generator) -> None:
+    """
+    Purpose of this test is to check that edit cart panel can be accessed by pressing on edit cart button
+    :param checkout_page_generator: conftest generated checkout page with logged-in user and item added to cart
+    :return:
+    """
     logger.info("*** STARTING TEST CHECK THAT EDIT CART BUTTON IS WORKING ***")
     checkout_page = CheckoutPage(checkout_page_generator)
     logger.info("Click on edit cart button")
@@ -98,6 +135,12 @@ def test_enter_edit_cart(checkout_page_generator) -> None:
 
 
 def test_remove_item_from_shopping_cart(checkout_page_generator) -> None:
+    """
+    Purpose of this test is to check that item can be successfully removed from cart by pressing on remove from cart
+    button that is located in edit cart panel
+    :param checkout_page_generator: conftest generated checkout page with logged-in user and item added to cart
+    :return:
+    """
     logger.info("*** STARTING TEST REMOVE ITEM FROM SHOPPING CART ***")
     checkout_page = CheckoutPage(checkout_page_generator)
     logger.info("Click on edit cart button")
@@ -113,6 +156,11 @@ def test_remove_item_from_shopping_cart(checkout_page_generator) -> None:
 
 
 def test_complete_payment(checkout_page_generator) -> None:
+    """
+    Purpose of this test is to check that order can be successfully confirmed
+    :param checkout_page_generator: conftest generated checkout page with logged-in user and item added to cart
+    :return:
+    """
     logger.info("*** STARTING TEST COMPLETE ORDER ***")
     checkout_page = CheckoutPage(checkout_page_generator)
     logger.info("Click on confirm order button")
@@ -126,6 +174,12 @@ def test_complete_payment(checkout_page_generator) -> None:
 
 
 def test_open_payment_invoice(checkout_page_generator) -> None:
+    """
+    Purpose of this test is to check that payment invoice can be successfully opened when order is completed by
+    pressing on invoice button
+    :param checkout_page_generator: conftest generated checkout page with logged-in user and item added to cart
+    :return:
+    """
     logger.info("*** STARTING TEST OPEN INVOICE PAGE WHEN ORDER IS COMPLETED ***")
     checkout_page = CheckoutPage(checkout_page_generator)
     logger.info("Click on confirm order button")

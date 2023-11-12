@@ -10,8 +10,8 @@ class TestData:
 
     @staticmethod
     def valid_register_data():
-        return {"first_name": "test", "last_name": "test", "email": "tes12121312t@mail.com", "full_address": "ilica",
-                "city": "zagreb", "region": "3513", "zip_code": "12345", "login_name": "new_1tes21ter_12345",
+        return {"first_name": "test", "last_name": "test", "email": "t12avx2121312t@mail.com", "full_address": "ilica",
+                "city": "zagreb", "region": "3513", "zip_code": "12345", "login_name": "new_1tes9876ter_12345",
                 "password": "abcd1234"}
 
     @staticmethod

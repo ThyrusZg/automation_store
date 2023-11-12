@@ -5,6 +5,11 @@ from automation_store.src.logger.logger_setup import logger
 
 
 def test_navigate_to_login_page(landing_page_generator) -> None:
+    """
+    Purpose of this test is to check that login page can be accessed by pressing on login button
+    :param landing_page_generator: conftest generated landing page (home page)
+    :return: None
+    """
     logger.info("*** STARTING TEST NAVIGATE TO LOGIN PAGE FROM LANDING PAGE ***")
     landing_page = LandingPage(landing_page_generator)
     logger.info("Click on login button")
@@ -18,6 +23,11 @@ def test_navigate_to_login_page(landing_page_generator) -> None:
 
 
 def test_check_that_register_button_is_working(landing_page_generator) -> None:
+    """
+    Purpose of this test is to check that register page can be accessed by pressing on register button in login panel
+    :param landing_page_generator: conftest generated landing page (home page)
+    :return: None
+    """
     logger.info("*** STARTING TEST CHECK THAT REGISTER BUTTON IS WORKING ***")
     landing_page = LandingPage(landing_page_generator)
     logger.info("Click on login button")
@@ -33,6 +43,12 @@ def test_check_that_register_button_is_working(landing_page_generator) -> None:
 
 
 def test_empty_search(landing_page_generator) -> None:
+    """
+    Purpose of this test is to check that emtpy search is allowed by clicking on search button without any data to
+    search in search input field
+    :param landing_page_generator: conftest generated landing page (home page)
+    :return: None
+    """
     logger.info("*** STARTING TEST EMPTY SEARCH ***")
     landing_page = LandingPage(landing_page_generator)
     logger.info("Click on search button")
@@ -46,6 +62,11 @@ def test_empty_search(landing_page_generator) -> None:
 
 
 def test_check_product_in_default_category(landing_page_generator) -> None:
+    """
+    Purpose of this test is to check that specific product can be searched in default/all category
+    :param landing_page_generator: conftest generated landing page (home page)
+    :return: None
+    """
     logger.info("*** STARTING TEST SEARCH IN DEFAULT CATEGORY ***")
     landing_page = LandingPage(landing_page_generator)
     logger.info("Search for specific product in all category")
@@ -59,6 +80,11 @@ def test_check_product_in_default_category(landing_page_generator) -> None:
 
 
 def test_check_product_in_apparel_and_accessories_category(landing_page_generator) -> None:
+    """
+    Purpose of this test is to check that specific product can be searched in apparel and accessories category
+    :param landing_page_generator: conftest generated landing page (home page)
+    :return: None
+    """
     logger.info("*** STARTING TEST SEARCH IN APPAREL AND ACCESSORIES CATEGORY***")
     landing_page = LandingPage(landing_page_generator)
     logger.info("Search for specific product in apparel and accessories category")
@@ -72,6 +98,11 @@ def test_check_product_in_apparel_and_accessories_category(landing_page_generato
 
 
 def test_check_product_in_makeup_category(landing_page_generator) -> None:
+    """
+    Purpose of this test is to check that specific product can be searched in makeup category
+    :param landing_page_generator: conftest generated landing page (home page)
+    :return: None
+    """
     logger.info("*** STARTING TEST SEARCH IN MAKEUP CATEGORY ***")
     landing_page = LandingPage(landing_page_generator)
     logger.info("Search for specific product in makeup category")
@@ -85,6 +116,11 @@ def test_check_product_in_makeup_category(landing_page_generator) -> None:
 
 
 def test_check_product_in_skincare_category(landing_page_generator) -> None:
+    """
+    Purpose of this test is to check that specific product can be searched in skincare category
+    :param landing_page_generator: conftest generated landing page (home page)
+    :return: None
+    """
     logger.info("*** STARTING TEST SEARCH IN SKINCARE CATEGORY ***")
     landing_page = LandingPage(landing_page_generator)
     logger.info("Search for specific product in makeup category")
@@ -98,6 +134,11 @@ def test_check_product_in_skincare_category(landing_page_generator) -> None:
 
 
 def test_check_product_in_fragrance_category(landing_page_generator) -> None:
+    """
+    Purpose of this test is to check that specific product can be searched in fragrance category
+    :param landing_page_generator: conftest generated landing page (home page)
+    :return: None
+    """
     logger.info("*** STARTING TEST SEARCH IN FRAGRANCE CATEGORY ***")
     landing_page = LandingPage(landing_page_generator)
     logger.info("Search for specific product in makeup category")
@@ -111,6 +152,11 @@ def test_check_product_in_fragrance_category(landing_page_generator) -> None:
 
 
 def test_check_product_in_men_category(landing_page_generator) -> None:
+    """
+    Purpose of this test is to check that specific product can be searched in men category
+    :param landing_page_generator: conftest generated landing page (home page)
+    :return: None
+    """
     logger.info("*** STARTING TEST SEARCH IN MEN CATEGORY ***")
     landing_page = LandingPage(landing_page_generator)
     logger.info("Search for specific product in men category")
@@ -124,6 +170,11 @@ def test_check_product_in_men_category(landing_page_generator) -> None:
 
 
 def test_check_product_in_hair_care_category(landing_page_generator) -> None:
+    """
+    Purpose of this test is to check that specific product can be searched in hair care category
+    :param landing_page_generator: conftest generated landing page (home page)
+    :return: None
+    """
     logger.info("*** STARTING TEST SEARCH IN HAIR CARE CATEGORY ***")
     landing_page = LandingPage(landing_page_generator)
     logger.info("Search for specific product in hair care category")
@@ -137,6 +188,11 @@ def test_check_product_in_hair_care_category(landing_page_generator) -> None:
 
 
 def test_check_product_in_books_category(landing_page_generator) -> None:
+    """
+    Purpose of this test is to check that specific product can be searched in books category
+    :param landing_page_generator: conftest generated landing page (home page)
+    :return: None
+    """
     logger.info("*** STARTING TEST SEARCH IN BOOKS CATEGORY ***")
     landing_page = LandingPage(landing_page_generator)
     logger.info("Search for specific product in books category")
@@ -150,6 +206,12 @@ def test_check_product_in_books_category(landing_page_generator) -> None:
 
 
 def test_add_product_to_cart_from_default_category_search(landing_page_generator) -> None:
+    """
+    Purpose of this test is to check that specific product can be searched in default/all category and that product
+    which is found can be successfully added to cart
+    :param landing_page_generator: conftest generated landing page (home page)
+    :return: None
+    """
     logger.info("*** STARTING TEST ADD PRODUCT TO CART FROM DEFAULT SEARCH ***")
     landing_page = LandingPage(landing_page_generator)
     logger.info("Search for specific product in all category")
@@ -168,6 +230,12 @@ def test_add_product_to_cart_from_default_category_search(landing_page_generator
 
 
 def test_add_product_to_cart_from_makeup_category(landing_page_generator) -> None:
+    """
+    Purpose of this test is to check that specific product can be searched in makeup category and that product
+    which is found can be successfully added to cart
+    :param landing_page_generator: conftest generated landing page (home page)
+    :return: None
+    """
     logger.info("*** STARTING TEST ADD PRODUCT TO CART FROM MAKEUP CATEGORY ***")
     landing_page = LandingPage(landing_page_generator)
     logger.info("Search for specific product in makeup category")
@@ -186,6 +254,12 @@ def test_add_product_to_cart_from_makeup_category(landing_page_generator) -> Non
 
 
 def test_add_product_to_cart_out_stock(landing_page_generator) -> None:
+    """
+    Purpose of this test is to check that specific product can be searched in apparel and accessories category and
+    found product that is out of stock will have out of stock label.
+    :param landing_page_generator: conftest generated landing page (home page)
+    :return: None
+    """
     logger.info("*** STARTING TEST CHECK THAT PRODUCT IS OUT OF STOCK ***")
     landing_page = LandingPage(landing_page_generator)
     logger.info("Search for specific product in apparel and accessories category")
